@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Raghav Gupta — Senior QA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M54 10 L76 10 L44 52 H70 L26 90 L46 56 H24 Z' fill='%23ffd700'/%3E%3C/svg%3E"/>
+</head>
+<body>
+
+  <!-- Custom Cursor (desktop) -->
+  <div id="cursor"></div>
+  <div id="cursorRing"></div>
+
+  <!-- Particle Background -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- ─── NAV ─── -->
+  <nav id="navbar">
+    <a href="#hero" class="nav-logo"><span>[</span>SQA.ENG<span>]</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#timeline">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="burger" id="burger" aria-label="Open menu" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ─── MOBILE MENU ─── -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mob-close" onclick="toggleMenu()">✕ CLOSE</button>
+    <a href="#about"    onclick="toggleMenu()" data-num="01">About</a>
+    <a href="#skills"   onclick="toggleMenu()" data-num="02">Skills</a>
+    <a href="#timeline" onclick="toggleMenu()" data-num="03">Experience</a>
+    <a href="#projects" onclick="toggleMenu()" data-num="04">Projects</a>
+    <a href="#contact"  onclick="toggleMenu()" data-num="05">Contact</a>
+  </div>
+
+  <!-- ─── HERO ─── -->
+  <section id="hero">
+    <!-- decorative layers -->
+    <div class="hero-grid"></div>
+    <div class="hero-perspective-floor"></div>
+    <div class="hc tl"></div>
+    <div class="hc tr"></div>
+    <div class="hc bl"></div>
+    <div class="hc br"></div>
+
+    <!-- ghost background text -->
+    <div class="hero-bg-text" id="heroBgText">QUALITY</div>
+
+    <!-- centered content -->
+    <div class="hero-content">
+      <div class="hero-status">
+        <span class="status-dot"></span>
+        SYSTEM ONLINE — QUALITY ASSURED
+      </div>
+
+      <h1 class="hero-name">
+        <span class="name-line-1 glitch" data-text="YOUR">RAGHAV</span><br/>
+        <span class="name-line-2 glitch" data-text="NAME">GUPTA</span>
+      </h1>
+
+      <p class="hero-role">
+        BREAKING THINGS<br/>
+        <span class="typewriter" id="typewriter"></span><span class="tcursor"></span>
+      </p>
+
+      <p class="hero-desc">
+        Senior SQA Engineer obsessed with building systems that <strong>cannot fail.</strong>
+        I find bugs before users do — and architect the frameworks that make sure they stay found.
+      </p>
+
+      <div class="hero-cta-row">
+        <a href="#projects" class="cta-btn primary">View Work ↓</a>
+        <a href="#contact"  class="cta-btn secondary">Get in Touch</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num" data-count="3" data-sfx="+">0+</div>
+          <div class="stat-label">Years Exp.</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-num" data-count="1200" data-sfx="+">0+</div>
+          <div class="stat-label">Test Cases Wrote</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-num" data-count="7" data-sfx="">0</div>
+          <div class="stat-label">Projects Worked On</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-hint">Scroll</div>
+  </section>
+
+  <button id="toTopBtn" class="top-btn" type="button">Move to top</button>
+
+  <!-- ─── ABOUT ─── -->
+  <section id="about">
+    <div class="hud-corner tl"></div>
+    <div class="hud-corner br"></div>
+    <div class="section-tag">001 / About Me</div>
+    <h2 class="section-title fade-up">WHO I<br/>AM</h2>
+    <div class="about-grid">
+      <div class="about-text fade-up">
+        <p>I’m a <strong>Senior SQA Engineer</strong> focused on building reliable and efficient release processes. I combine strong attention to detail with a practical, system-level approach to quality.</p>
+        <p>I don’t just find bugs — I create <strong>test frameworks, automation pipelines, and processes that help prevent them.</strong> From manual exploratory testing and accessibility testing to end-to-end automation, I work across the full testing lifecycle to improve product quality and delivery speed.</p>
+        <p>My goal is simple: <strong>faster, reliable, and user-friendly releases</strong> with fewer defects.</p>
+        <div class="about-pills">
+          <span class="pill">Test Automation</span>
+          <span class="pill">End-to-End Testing</span>
+          <span class="pill">Accessibility Testing</span>
+          <span class="pill">CI/CD Pipelines</span>
+          <span class="pill">API Testing</span>
+          <span class="pill">Performance Optimization</span>
+          <span class="pill">Test Strategy & Planning</span>
+        </div>
+      </div>
+      <div class="about-metrics fade-up">
+        <div class="metric-block">
+          <div class="metric-num accent-red">99.8%</div>
+          <div class="metric-label">Release Stability via Automation</div>
+          <div class="metric-bar"><div class="metric-bar-fill" style="width:99.8%"></div></div>
+        </div>
+        <div class="metric-block">
+          <div class="metric-num accent-cyan">40%</div>
+          <div class="metric-label">Reduction in Regression Time</div>
+          <div class="metric-bar"><div class="metric-bar-fill accent-cyan-fill" style="width:40%"></div></div>
+        </div>
+        <div class="metric-block">
+          <div class="metric-num accent-gold">3×</div>
+          <div class="metric-label">Faster Test Execution </div>
+          <div class="metric-bar"><div class="metric-bar-fill accent-gold-fill" style="width:75%"></div></div>
+        </div>
+        <div class="metric-block">
+          <div class="metric-num accent-green">62%</div>
+          <div class="metric-label">Fewer Production Bugs</div>
+          <div class="metric-bar"><div class="metric-bar-fill accent-green-fill" style="width:62%"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SKILLS ─── -->
+  <section id="skills">
+    <div class="section-tag">002 / Skills</div>
+    <h2 class="section-title fade-up">WHAT<br/>I DO</h2>
+    <div class="skills-grid">
+
+      <div class="skill-card fade-up" data-i="01">
+        <span class="skill-icon">//</span>
+        <div class="skill-name">Test Automation</div>
+        <p class="skill-desc">Building robust, maintainable frameworks that scale with your product — not against it.</p>
+        <div class="sbar-wrap">
+          <div class="sbar-label"><span>Proficiency</span><span>90%</span></div>
+          <div class="sbar-track"><div class="sbar-fill" data-w="90"></div></div>
+        </div>
+        <div class="skill-tools">
+          <span class="tool-tag">Playwright</span><span class="tool-tag">UI Automation</span><span class="tool-tag">TypeScript</span>
+        </div>
+      </div>
+
+      <div class="skill-card fade-up" data-i="02">
+        <span class="skill-icon">∑</span>
+        <div class="skill-name">API Testing</div>
+        <p class="skill-desc">Deep contract testing, schema validation, and performance benchmarking before UI exists.</p>
+        <div class="sbar-wrap">
+          <div class="sbar-label"><span>Proficiency</span><span>94%</span></div>
+          <div class="sbar-track"><div class="sbar-fill" data-w="94"></div></div>
+        </div>
+        <div class="skill-tools">
+          <span class="tool-tag">Postman</span>
+        </div>
+      </div>
+
+      <div class="skill-card fade-up" data-i="03">
+        <span class="skill-icon">⚡</span>
+        <div class="skill-name">Performance QA</div>
+        <p class="skill-desc">Load, stress, and soak testing to uncover the breaking points before your users do.</p>
+        <div class="sbar-wrap">
+          <div class="sbar-label"><span>Proficiency</span><span>88%</span></div>
+          <div class="sbar-track"><div class="sbar-fill" data-w="88"></div></div>
+        </div>
+        <div class="skill-tools">
+          <span class="tool-tag">JMeter</span>
+        </div>
+      </div>
+
+      <div class="skill-card fade-up" data-i="04">
+        <span class="skill-icon">⬡</span>
+        <div class="skill-name">CI/CD Integration</div>
+        <p class="skill-desc">Quality gates embedded in every pipeline stage — no code ships without passing the gauntlet.</p>
+        <div class="sbar-wrap">
+          <div class="sbar-label"><span>Proficiency</span><span>91%</span></div>
+          <div class="sbar-track"><div class="sbar-fill" data-w="91"></div></div>
+        </div>
+        <div class="skill-tools">
+          <span class="tool-tag">Jenkins</span>
+        </div>
+      </div>
+
+      <div class="skill-card fade-up" data-i="05">
+        <span class="skill-icon">◈</span>
+        <div class="skill-name">Accessibility Testing</div>
+        <p class="skill-desc">iOS and Android QA across real devices, including accessibility and gesture coverage.</p>
+        <div class="sbar-wrap">
+          <div class="sbar-label"><span>Proficiency</span><span>85%</span></div>
+          <div class="sbar-track"><div class="sbar-fill" data-w="85"></div></div>
+        </div>
+        <div class="skill-tools">
+          <span class="tool-tag">WCAG 2.2 AA</span><span class="tool-tag">Screen Reader Testing</span><span class="tool-tag">XCUITest</span><span class="tool-tag">BrowserStack</span>
+        </div>
+      </div>
+
+      <div class="skill-card fade-up" data-i="06">
+        <span class="skill-icon">◻</span>
+        <div class="skill-name">QA Leadership</div>
+        <p class="skill-desc">Defining QA strategy, mentoring junior engineers, and building processes that outlast any sprint.</p>
+        <div class="sbar-wrap">
+          <div class="sbar-label"><span>Proficiency</span><span>93%</span></div>
+          <div class="sbar-track"><div class="sbar-fill" data-w="93"></div></div>
+        </div>
+        <div class="skill-tools">
+          <span class="tool-tag">Test Planning</span><span class="tool-tag">Jira</span><span class="tool-tag">Confluence</span><span class="tool-tag">Mentoring</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── TIMELINE ─── -->
+  <section id="timeline">
+    <div class="section-tag">003 / Experience</div>
+    <h2 class="section-title fade-up">WHERE<br/>I'VE BEEN</h2>
+    <div class="tl-wrap">
+
+      <div class="tl-item current fade-up">
+        <div class="tl-badge">Current Role</div>
+        <div class="tl-date">Dec 2025 — Present</div>
+        <div class="tl-role">Senior QA Engineer</div>
+        <div class="tl-company">Zeus Learning Private Limited</div>
+        <p class="tl-desc">Performed accessibility testing across multiple McGraw Hill platforms, identifying and reporting 600+ issues while collaborating with developers to improve compliance and usability. </p>
+        <div class="tl-tags">
+          <span class="tl-tag">Accessibility</span><span class="tl-tag">WCAG 2.2</span><span class="tl-tag">Screen Reader Testing</span><span class="tl-tag">Cross Browser Testing</span><span class="tl-tag">ACR</span>
+        </div>
+      </div>
+
+      <div class="tl-item fade-up">
+        <div class="tl-date">Jul 2023 — Dec 2025</div>
+        <div class="tl-role">QA Engineer</div>
+        <div class="tl-company">Zeus Learning Private Limited</div>       
+        <div class="tl-desc">
+          <ol>
+            <li>
+              <strong>Quantum Automation (Jun 2025 – Jan 2026)</strong>
+              <ol type="a">
+                <li>Developed and maintained automation test scripts for regression coverage</li>
+                <li>Executed daily automated test suites and monitored results</li>
+                <li>Investigated and resolved test failures and flaky scripts</li>
+                <li>Ensured automation stability and reliability within CI workflows</li>
+              </ol>
+            </li>
+            <li>
+              <strong>Quantum Modularisation (Apr 2024 – May 2025)</strong>
+              <ol type="a">
+                <li>Authored 1200+ detailed test cases covering multiple modules</li>
+                <li>Executed monthly regression testing and sanity testing after bug fixes</li>
+                <li>Reported and tracked defects using JIRA, ensuring clear documentation and resolution</li>
+                <li>Generated large-scale test data for complex scenarios</li>
+                <li>Monitored application performance using Grafana dashboards</li>
+                <li>Analyzed error logs and alert emails to proactively identify issues</li>
+              </ol>
+            </li>
+            <li>
+              <strong>ALEKS Project (Jul 2023 – Mar 2024)</strong>
+              <ol type="a">
+                <li>Validated mathematical algorithms and logic-based content for accuracy and functionality</li>
+                <li>Tested dynamically generated problems (e.g., equation solving, guided solutions)</li>
+                <li>Verified UI behavior, answer validation, and step-by-step solution flows</li>
+                <li>Ensured content correctness across HTML, CSS, and JavaScript implementations</li>
+              </ol>
+            </li>
+          </ol>
+        </div>
+        
+        <div class="tl-tags">
+          <span class="tl-tag">Test Automation</span><span class="tl-tag">Regression Testing</span><span class="tl-tag">Sanity Testing</span><span class="tl-tag">Smoke Testing</span><span class="tl-tag">Testcase Design</span><span class="tl-tag">UAT</span> <span class="tl-tag">JIRA</span> <span class="tl-tag">UI Automation</span> 
+        </div>
+      </div>
+
+      <div class="tl-item fade-up">
+        <div class="tl-date">Sept 2022 — Nov 2022</div>
+        <div class="tl-role">Subject Matter Expert - Freelance</div>
+        <div class="tl-company">Testlify - AI native skill assessments and interviewing tool</div>
+        <p class="tl-desc">Contributed to an exciting new product that is quickly becoming a tool of choice for organisations and recruitment specialists. Wrote and executed test scenarios and test cases.</p>
+        <div class="tl-tags">
+          <span class="tl-tag">Manual Testing</span><span class="tl-tag">SME</span><span class="tl-tag">Bug Tracking</span>
+        </div>
+      </div>
+
+      <div class="tl-item fade-up">
+        <div class="tl-date">Jun 2022 — Jul 2022</div>
+        <div class="tl-role">Manual Tester - Internship</div>
+        <div class="tl-company">Edgistify - AI Powered Supply Chain Platform</div>
+        <p class="tl-desc">Performed end-to-end testing of a full-stack Inventory Management application (KULT), executed time-sensitive updates, and designed and ran detailed test cases to ensure high quality and accurate defect identification.</p>
+        <div class="tl-tags">
+          <span class="tl-tag">Manual Testing</span><span class="tl-tag">Test Case Design</span><span class="tl-tag">Redmine</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── PROJECTS ─── -->
+  <section id="projects">
+    <div class="section-tag">004 / Projects</div>
+    <h2 class="section-title fade-up">SELECT<br/>WORK</h2>
+    <div class="proj-grid">
+
+      <div class="proj-card fade-up" data-n="01">
+        <div class="proj-scan"></div>
+        <div class="proj-arrow">↗</div>
+        <div class="proj-num">Project 01</div>
+        <div class="proj-title">Automation Framework v3.0</div>
+        <p class="proj-desc">Fully modular, data-driven framework supporting web, API, and mobile testing under one codebase. Plugged into CI/CD with real-time Slack failure alerts.</p>
+        <div class="proj-outcomes">
+          <span class="outcome">80% code reuse</span>
+          <span class="outcome">6h regression cycle</span>
+        </div>
+      </div>
+
+      <div class="proj-card fade-up" data-n="02">
+        <div class="proj-scan"></div>
+        <div class="proj-arrow">↗</div>
+        <div class="proj-num">Project 02</div>
+        <div class="proj-title">Performance Test Suite</div>
+        <p class="proj-desc">Load testing suite simulating 50,000 concurrent users. Identified three critical database bottlenecks before a major launch, protecting 99.9% uptime on release day.</p>
+        <div class="proj-outcomes">
+          <span class="outcome">50K concurrent users</span>
+          <span class="outcome">3 critical bugs found</span>
+        </div>
+      </div>
+
+      <div class="proj-card fade-up" data-n="03">
+        <div class="proj-scan"></div>
+        <div class="proj-arrow">↗</div>
+        <div class="proj-num">Project 03</div>
+        <div class="proj-title">QA Quality Dashboard</div>
+        <p class="proj-desc">Real-time metrics dashboard pulling from JIRA, TestRail, and CI pipelines. Replaced 5 manual weekly reports with a single live view for leadership.</p>
+        <div class="proj-outcomes">
+          <span class="outcome">Real-time visibility</span>
+          <span class="outcome">5 reports automated</span>
+        </div>
+      </div>
+
+      <div class="proj-card fade-up" data-n="04">
+        <div class="proj-scan"></div>
+        <div class="proj-arrow">↗</div>
+        <div class="proj-num">Project 04</div>
+        <div class="proj-title">Mobile Test Strategy</div>
+        <p class="proj-desc">End-to-end mobile testing across iOS and Android for 500K+ users. Device matrix, accessibility coverage, and PR-triggered regression automation.</p>
+        <div class="proj-outcomes">
+          <span class="outcome">500K+ users covered</span>
+          <span class="outcome">Accessibility compliant</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── CONTACT ─── -->
+  <section id="contact">
+    <div class="contact-bg-text">HIRE ME</div>
+    <div class="section-tag">005 / Contact</div>
+    <h2 class="section-title fade-up">LET'S<br/>TALK</h2>
+    <div class="contact-grid">
+      <div class="fade-up">
+        <p class="contact-intro">Looking for a Senior QA engineer who'll treat your product's quality like it's personal? Let's talk about what bulletproof looks like for your team.</p>
+        <div class="contact-links">
+          <a href="mailto:raghavgupta076@gmail.com"                    class="contact-link">Gmail<span>→</span></a>
+          <a href="https://www.linkedin.com/in/raghav-gupta1711/"      class="contact-link" target="_blank" rel="noopener">LinkedIn <span>→</span></a>
+          <a href="https://github.com/yourusername"          class="contact-link" target="_blank" rel="noopener">GitHub <span>→</span></a>
+          <a href="#"                                         class="contact-link">Download Resume <span>↓</span></a>
+        </div>
+      </div>
+      <form class="contact-form fade-up" onsubmit="handleSubmit(event)">
+        <div class="form-field">
+          <input type="text"  id="cname"    placeholder=" " autocomplete="off"/>
+          <label for="cname">Name</label>
+        </div>
+        <div class="form-field">
+          <input type="email" id="cemail"   placeholder=" " autocomplete="off"/>
+          <label for="cemail">Email</label>
+        </div>
+        <div class="form-field">
+          <input type="text"  id="csubject" placeholder=" " autocomplete="off"/>
+          <label for="csubject">Subject</label>
+        </div>
+        <div class="form-field">
+          <textarea id="cmessage" placeholder=" " rows="4"></textarea>
+          <label for="cmessage">Message</label>
+        </div>
+        <button type="submit" class="submit-btn">
+          <span class="btn-text">Send Message</span>
+          <span class="btn-arrow">→</span>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <span>© 2026 <a href="#">Raghav Gupta</a>. Built with Love.</span>
+    <span class="footer-title">SENIOR SQA ENGINEER</span>
+    <span>Mumbai, India</span>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
